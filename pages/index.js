@@ -10,13 +10,29 @@ import { useSession } from 'next-auth/react'
 export default function Home() {
   
   const { data: session } = useSession()
-  const name = session ? session.user.name : 'Papaya 🍐'
+
+  const generateRandomName = () => {
+
+      const names = [
+          'Papaya 🍐',
+          'Apple 🍎',
+          'Pumpkin 🎃',
+          'Mushroom 🍄',
+          'Tomato 🍅',
+          'Cherry 🍒'
+      ]
+
+      return names[Math.floor(Math.random() * names.length)]
+
+  }
+
+  const name = session ? session.user.name : generateRandomName()
 
   return (
     <div suppressHydrationWarning >
 
-      <Head>
-        <title>My Dash - {name}</title>
+      <Head suppressHydrationWarning>
+        <title suppressHydrationWarning>My Dash - {name}</title>
       </Head>
 
       {
