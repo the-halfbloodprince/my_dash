@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <div>
 
-      <head>
+      <Head>
         <title>My Dash - Manish</title>
-      </head>
+      </Head>
 
       <main className='flex flex-col w-screen h-screen justify-center space-y-10 px-24 items-center'>
         <p className='text-6xl text-subtitle hover:text-subtitle-glow transition-all duration-500 ease-in'>Hi <span className='text-glow'>{`${name}`}</span></p>
